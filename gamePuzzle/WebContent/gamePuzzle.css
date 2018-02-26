@@ -1,0 +1,103 @@
+.header-css{
+	text-align:center;
+	font-weight:bold;
+}
+
+.player-bar {
+    background-color: limegreen;
+}
+.player-bar-div {
+    display: inline-flex;
+}
+
+
+.main-container-css {
+    text-align: center;
+    margin: 2% 12% 0 12%;
+   /*  background-color: #eadede; */
+}
+
+.player-div-css {
+    width: 20%;
+    margin: 0 10% 0 10%;
+}
+
+.dragon-div-css {
+    width: 20%;
+    margin: 0 10% 0 25%;
+}
+
+.action-div-css {
+    width: 20%;
+    background: dodgerblue;
+    height: 40px;
+    padding: 10px;
+    font-weight: bold;
+    margin: 2%;
+    
+}
+ .action-div-css:hover{
+ 
+ font-size:15px;
+ 
+ }
+ 
+.action-div-top-margin {
+    margin-top: 10%;
+}
+.players_name {
+    font-size: 30px;
+    font-weight: bold;
+}
+.flash {
+   animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: red;}
+    to {color: black;}
+}
+
+.submit-button{
+    background-color: #f1bcc7;
+    border-color: black;
+}
+
+.name-text {
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.modal-body-css {
+    display: inline-flex;
+    margin-left: 17%;
+}
+
+.modal-popup-background{
+	background-color:#5fb584
+}
+
+.modal-popup-margin {
+    margin-top: 12%;
+}
+body {
+    background-image: url("./game.jpg");
+}
+
+.heading-css {
+    font-size: 40px;
+    color: white;
+}
+
+.page-css {
+    background-color: white;
+    border-radius: 35px;
+    padding: 2%;
+    background-image: url("./game-image.jpg");
+}

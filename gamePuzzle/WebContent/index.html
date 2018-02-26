@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>WELCOME TO THE PUZZLE
+			GAME</title>
+</head>
+
+<body ng-app="gameApp" ng-controller="gamePageController">
+
+<div class="row header-css">
+		<div class="col-sm-12 heading-css">Rules of Survival
+			</div>	
+			
+			<a href="#gamePage"><button type="button" class="btn btn-info btn-lg start-button-css"  data-toggle="modal" data-target="#myModal" ng-hide="!headerShow">Start Game</button></a>
+	</div>
+	
+<div class="col-sm-9 main-container-css" style="height: 100%">
+				<div ng-view></div>
+			</div>
+
+
+<div id="myModal" class="modal fade " role="dialog">
+  <div class="modal-dialog modal-popup-margin">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-popup-background">
+      
+      <div class="modal-body modal-body-css">
+        <p class="name-text">Create A Nickname</p>
+         <input type="text" name="input" ng-model="player_name"
+            required ng-trim="false">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default submit-button"  ng-click="startgame()" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script 
+		src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.js"></script>
+		<link href="gamePuzzle.css" type="text/css" rel="stylesheet" />	
+		<script src="main.js"></script>
+	<script src="route.js"></script>
+	<script src="gamePage.js"></script> 
+</body>
+</html>

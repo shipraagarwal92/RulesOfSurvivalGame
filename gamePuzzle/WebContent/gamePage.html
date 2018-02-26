@@ -1,0 +1,112 @@
+<div class="page-css">
+	<div class="col-md-12 player-bar-div">
+		<div class="player-div-css">
+			<i id="Player-animate" ng-show="!playerChance"
+				class="fa fa-arrow-right" style="font-size: 48px; color: red"></i> <span
+				ng-show="!player_name" class="players_name">You</span> <span
+				id="Player-animate" ng-bind="player_name" class="players_name">{{player_name}}</span>
+			<div class="player-bar" ng-model="player" id="player">{{player}}%
+			</div>
+		</div>
+		<div class="dragon-div-css">
+			<span id="" class="players_name">Dragon</span> <i id="Dragon-animate"
+				ng-show="playerChance" class="fa fa-arrow-left"
+				style="font-size: 48px; color: red"></i>
+			<div class="player-bar" ng-model="dragon" id="dragon">{{dragon}}%
+			</div>
+		</div>
+	</div>
+	<!-- <p ng-model="counter">{{counter}}</p> -->
+	<div class="col-md-12 action-div-top-margin">
+		<button class="col-md-3 action-div-css" data-toggle="modal"
+			data-target="#attackModal" ng-disabled="playerChance">
+			<span>Attack</span>
+		</button>
+		<button class="col-md-3 action-div-css" ng-click="blast()" ng-disabled="playerChance">
+			<span>Blast</span>
+		</button>
+		<button class="col-md-3 action-div-css" ng-click="heal()"
+			data-toggle="modal" data-target="#healModal" ng-disabled="playerChance">
+			<span>Heal</span>
+		</button>
+		<button class="col-md-3 action-div-css" data-toggle="modal"
+			data-target="#exitModal" ng-click="giveUp()" ng-disabled="playerChance">
+			<span>Giveup</span>
+		</button>
+	</div>
+
+	<div>
+		<h2>Game Commentry</h2>
+		<span ng-show="monsterChance">Dragon Attack {{player_name}} for
+			{{dragonValue}} </span> <span ng-show="playerChance">{{player_name}}
+			Attack Dragon for {{attackValue}} </span> <span ng-show="playerHeals">{{player_name}}
+			heals for 20 </span>
+	</div>
+
+	<div id="attackModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+
+				<div class="modal-body">
+					<form name="attackvalueSubmit">
+						<p>Enter the attack value between 1-19</p>
+
+						<input type="number" name="input" min="1" max="19"
+							ng-model="attackValue" class="form-control" required> <input
+							type="submit" class="btn btn-default" data-dismiss="modal"
+							ng-disabled="attackvalueSubmit.input.$dirty && attackvalueSubmit.input.$invalid"
+							ng-click="attack()">
+					<span style="color:red" ng-show="attackvalueSubmit.$dirty && attackvalueSubmit.$invalid">
+        <span ng-show="attackvalueSubmit.$error.min">Value should be above 1.</span>
+        <span ng-show="attackvalueSubmit.$error.max">Value should be below 20.</span>
+    </span>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="exitModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Modal Header</h4>
+				</div>
+				<div class="modal-body">
+					<p>Do you want to Exit.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						ng-click="winner()">Yes</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="healModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Modal Header</h4>
+				</div>
+				<div class="modal-body">
+					<p>{{player_name}} left with {{flag}} heal power</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
